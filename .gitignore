@@ -30,3 +30,5 @@ dist_armored/
 # 本地调试
 .cache/
 *.log
+build_out/
+dist/
