@@ -2599,15 +2599,18 @@ ${f.label !== '❌ 不要删' ? `
     let _scanTimer = null, _pollTimer = null, _scanStartTime = null;
 
     async function startScan() {
+        // 输入框里填了路径但没按回车时，直接点按钮也要能开始
+        if (!selectedPaths.size) addCustomPath();
+        const paths = [...selectedPaths];
+        if (!paths.length) {
+            showToast('请先选择一个磁盘，或在输入框填一个具体路径', 'error');
+            return;
+        }
         const btn = document.getElementById('btn-start-scan');
-        btn.textContent = '验证中';
+        btn.textContent = '扫描中…';
         btn.style.pointerEvents = 'none';
         btn.style.opacity = '0.4';
-        btn.style.background = 'var(--bg3)';
-
         btn.style.background = 'var(--accent)';
-        const paths = [...selectedPaths];
-        if (!paths.length) return;
         document.getElementById('page-setup').style.display = 'none';
         document.querySelector('.topbar').style.display = 'none';
         document.querySelector('.layout').style.display = 'none';
