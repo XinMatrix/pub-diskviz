@@ -1,0 +1,5 @@
+flask>=3.0
+openai>=1.40
+psutil>=5.9
+pystray>=0.19
+pillow>=10.0

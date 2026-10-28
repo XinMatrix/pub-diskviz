@@ -1,0 +1,32 @@
+# 生成的运行时数据，不要提交
+*.db
+*.db-shm
+*.db-wal
+output.csv
+disk_data.csv
+state.json
+config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 打包产物
+build/
+dist/
+dist_armored/
+*.spec
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# 本地调试
+.cache/
+*.log
